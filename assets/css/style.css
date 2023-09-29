@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
@@ -6,56 +6,115 @@
 
 /* grid */
 
-.container{
+.container {
     display: grid;
-    grid-template-areas: 
-    "nav"
-    "filtros"
-    "main"
-    "footer"
+    grid-template-areas:
+        "nav"
+        "filtros"
+        "main"
+        "footer"
     ;
     grid-template-rows: 1fr 1fr 10fr 1fr;
 }
 
 /* grid-areas */
 
-.nav-section{
+
+/* nav-section */
+
+.nav-section {
     grid-area: nav;
-    background-color: darkcyan;
+    background-color: cornflowerblue;
+    color: white;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.nav-section .logo{
+.nav-section .box {
+    display: flex;
     
 }
 
-.seccion{
+.nav-section .logo {
+    width: 30px;
+}
+
+/* filters */
+
+.seccion {
     grid-area: filtros;
     background-color: gainsboro;
 }
 
-.main-section{
+/* main-section */
+
+.main-section {
     grid-area: main;
 }
 
-.footer-section{
-    grid-area: footer;
-    background-color: cornflowerblue;
+.main-section .card-container .card {
+    text-align: center;
+    border: solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.main-section .card button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 75%;
+
+}
+
+.main-section .card button:hover {
+    background-color: blue;
 }
 
 
-@media (min-width: 576px){
-    
+.main-section .card img {
+    width: 300px;
+}
 
-    .container{
-        grid-template-areas: 
-        "nav filtros"
-        "nav main"
-        "footer main";
+.main-section .card
+/* footer-section */
+
+.footer-section {
+    grid-area: footer;
+    background-color: cornflowerblue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section .logos {
+    width: 30px;
+    display: flex;
+}
+
+/* desk-media */
+
+@media (min-width: 576px) {
+
+
+    .container {
+        grid-template-areas:
+            "nav filtros"
+            "nav main"
+            "footer main";
         grid-template-columns: 150px 1fr;
-        
+
     }
 
-    .main-section .cards-container{
+    .main-section .card-container {
         flex-direction: row;
         flex-wrap: wrap;
     }
