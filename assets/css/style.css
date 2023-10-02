@@ -34,24 +34,51 @@
 
 .nav-section .box {
     display: flex;
-    
+
 }
 
-.nav-section .logo {
+.nav-section .logo,
+.menu {
     width: 30px;
 }
+
+
 
 /* filters */
 
 .seccion {
     grid-area: filtros;
     background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
 }
+
+.seccion select {
+    width: 280px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+
 
 /* main-section */
 
 .main-section {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.main-section .card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
 }
 
 .main-section .card-container .card {
@@ -83,10 +110,21 @@
     width: 300px;
 }
 
-.main-section .card
+.main-section .navigation {
+    display: flex;
+}
+
+.main-section .navigation button {
+    width: 30px;
+    height: 30px;
+    color: cornflowerblue;
+
+}
+
+
 /* footer-section */
 
-.footer-section {
+.foot-section {
     grid-area: footer;
     background-color: cornflowerblue;
     color: white;
@@ -95,12 +133,18 @@
     align-items: center;
 }
 
-.footer-section .logos {
+.foot-section .logos {
     width: 30px;
     display: flex;
 }
 
 /* desk-media */
+
+@media(max-width: 576px) {
+    .nav-section ul {
+        display: none;
+    }
+}
 
 @media (min-width: 576px) {
 
@@ -109,14 +153,40 @@
         grid-template-areas:
             "nav filtros"
             "nav main"
-            "footer main";
+            "footer main"
+        ;
         grid-template-columns: 150px 1fr;
-
+        grid-template-rows: 60px 1fr 60px;
     }
 
     .main-section .card-container {
         flex-direction: row;
         flex-wrap: wrap;
+
+
     }
+
+    .nav-section .menu {
+        visibility: hidden;
+    }
+
+    .nav-section ul {
+        list-style: none;
+    }
+
+    .nav-section {
+        flex-direction: column;
+        justify-content: start;
+        gap: 35px;
+        padding: 15px;
+    }
+
+    .nav-section .box {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+
 
 }
